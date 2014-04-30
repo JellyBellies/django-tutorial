@@ -5,18 +5,20 @@ from django.template import RequestContext, loader
 from django.views import generic
 
 from addressbook.models import Record, Title, City, County
-"""
+
 def index(request):
-    latest_record_list = Record.objects.order_by('-surname')
+   # latest_record_list = Record.objects.order_by('surname')
+    latest_record_list = Record.objects.all().extra(select={'lower_name':'lower(surname)'}).order_by('lower_name')
     context = {'latest_record_list':latest_record_list }
     return render(request, 'addressbook/index.html', context)
-"""
 
+"""
 class IndexView(generic.ListView):
     template_name = 'addressbook/index.html'
     context_object_name = 'latest_record_list'
     def get_queryset(self):
         return Record.objects.order_by('-surname')
+"""
 
 """
 def detail(request, record_id):
