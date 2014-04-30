@@ -1,0 +1,19 @@
+
+Django example for StickyWorld
+
+Last update 30/04/2014 
+
+application is called: addressbook (project named: project_sw)
+
+consists of two pages; 
+- index which lists all values in database; 
+- addrecord containing a form for inputting a new record
+
+no testing or validation included
+table is ordered by surname
+django-bootstrap3 used for css
+sqlite3 used (defualt)
+
+the form could be created by making a class for it, however due to lack of experience and time, I chose to keep it simple and follow the tutorial example.
+
+note: database used to populate drop down menus on form (save space but more processing power as a result of the query)
