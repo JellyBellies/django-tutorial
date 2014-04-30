@@ -1,0 +1,30 @@
+{% if latest_record_list %}
+
+<table>
+<tr>
+<td><h4>Title</h4></td>
+<td><h4>First name</h4></td>
+<td><h4>Last name</h4></td>
+<td><h4>City</h4></td>
+<td><h4>Postcode</h4></td> 
+</tr>
+
+{% for record in latest_record_list %}
+
+<tr>
+<td>{{ record.title }} </td>
+<td>{{ record.firstname }} </td>
+<td>{{ record.surname }} </td>
+<td>{{ record.city }} </td>
+<td>{{ record.postcode }} </td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+
+{% else %}
+<p>No records available </p>
+{% endif %}
+<a href="{% url 'addressbook:addrecord' %}"> Add Record </a>
