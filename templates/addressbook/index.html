@@ -4,31 +4,29 @@
 
 {% if latest_record_list %}
 
-<table class="table table-condensed table-striped">
-<tr>
-<th>Title</th>
-<th>First name</th>
-<th>Last name</th>
-<th>City</th>
-<th>Postcode</th> 
-</tr>
-
-{% for record in latest_record_list %}
-
-<tr>
-<td>{{ record.title }} </td>
-<td>{{ record.firstname }} </td>
-<td>{{ record.surname }} </td>
-<td>{{ record.city }} </td>
-<td>{{ record.postcode }} </td>
-</tr>
-
-{% endfor %}
-
-</table>
-
-
+	<table class="table table-condensed table-striped">
+		<tr>
+			<th>Title</th>
+			<th>First name</th>
+			<th>Last name</th>
+			<th>City</th>
+			<th>Postcode</th> 
+		</tr>
+	
+		{% for record in latest_record_list %}
+	
+			<tr>
+				<td>{{ record.title }} </td>
+				<td>{{ record.firstname }} </td>
+				<td>{{ record.surname }} </td>
+				<td>{{ record.city }} </td>
+				<td>{{ record.postcode }} </td>
+			</tr>
+	
+		{% endfor %}
+	
+	</table>
 {% else %}
-<p>No records available </p>
+	<p>No records available </p>
 {% endif %}
 <a href="{% url 'addressbook:addrecord' %}"> Add Record </a>
